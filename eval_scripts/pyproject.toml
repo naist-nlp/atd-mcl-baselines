@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "eval-scripts"
+version = "0.1.0"
+description = ""
+authors = ["shigashiyama"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+logzero = "^1.7.0"
+numpy = "^1.26.3"
+scipy = "^1.12.0"
+scikit-learn = "^1.4.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

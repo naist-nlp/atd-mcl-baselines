@@ -1,0 +1,105 @@
+doc_id:00019	same_members:True	same_url:False	prac_same:F
+- C3	https://www.openstreetmap.org/way/43558119	OSM_PARTOF	東大寺盧舎那仏像;東大寺大仏	T12
+- C3		not_found	大仏	T12
+doc_id:00019	same_members:True	same_url:False	prac_same:F
+- C12		not_found	像	T19
+- C12	https://www.openstreetmap.org/way/813386514	OSM_PARTOF	飛鳥大仏	T19
+doc_id:00265	same_members:True	same_url:False	prac_same:T
+- C1	https://www.openstreetmap.org/node/6397207541	OSM	東京駅	T1
+- C1	https://www.openstreetmap.org/node/6396868334	OSM	東京駅	T1
+doc_id:00265	same_members:True	same_url:False	prac_same:T
+- C6	https://www.openstreetmap.org/relation/11919407	OSM	JR日豊本線	T12
+- C6	https://www.openstreetmap.org/relation/1867554	OSM	JR日豊本線	T12
+doc_id:00265	same_members:True	same_url:False	prac_same:F
+- C11	https://www.openstreetmap.org/relation/13857525	OSM	城山町	T17
+- C11	https://www.openstreetmap.org/node/3051317914	OSM	城山	T17
+doc_id:00265	same_members:True	same_url:False	prac_same:T
+- C16	https://tokkou-no-haha.jp/tomiya-shokudo/	Other	富屋食堂	T22
+- C16	http://www.tomiyaryokan-chiran.jp/story/index.html	Other	富屋食堂	T22
+doc_id:00265	same_members:False	same_url:False	prac_same:F
+- C18+C19	https://www.openstreetmap.org/node/1068583409	OSM	知覧町	T23;T38
+- None		ent_nonex		
+doc_id:00265	same_members:False	same_url:False	prac_same:F
+- None		ent_nonex		
+- C3-mod		not_found	こちら	T41
+doc_id:00265	same_members:False	same_url:False	prac_same:F
+- None		ent_nonex		
+- C18		not_found	こちら	T41
+doc_id:00265	same_members:False	same_url:False	prac_same:F
+- None		ent_nonex		
+- C19		not_found	こちら	T41
+doc_id:01059	same_members:True	same_url:False	prac_same:F
+- C2	https://tabi-mag.jp/ko0241/	Other	弁天島	T2;T3
+- C2	https://www.town.otsuki.kochi.jp/kanko/info/kashinishi.php	Other_PARTOF	弁天島	T2;T3
+doc_id:01059	same_members:True	same_url:False	prac_same:F	高知県/愛媛県
+- C3	https://www.openstreetmap.org/way/130956543	OSM	柏島	T4;T5;T14;T18;T20;T24
+- C3	https://www.openstreetmap.org/relation/7405271	OSM	柏島	T4;T5;T14;T18;T20;T24
+doc_id:01059	same_members:True	same_url:False	prac_same:T
+- C4	https://www.openstreetmap.org/way/114279299	OSM	新星堂柏島大橋	T10;T12
+- C4	https://tabi-mag.jp/ko0240/	Other	新柏島大橋	T10;T12
+doc_id:01059	same_members:True	same_url:False	prac_same:F
+- C5		not_found	橋	T9;T13;T15
+- C5	https://tabi-mag.jp/ko0240/	Other	柏島大橋	T9;T13;T15
+doc_id:01059	same_members:True	same_url:False	prac_same:F
+- C9	https://www.openstreetmap.org/way/50557531	OSM	空港	T22
+- C9		not_found	空港	T22
+doc_id:00351	same_members:False	same_url:False	prac_same:F
+- C1+C17	https://www.openstreetmap.org/node/3654392259	OSM	清水公園駅	T1;T32
+- None		ent_nonex		
+doc_id:00351	same_members:True	same_url:False	prac_same:F
+- C11	https://www.openstreetmap.org/way/285379160	OSM_PARTOF	Caféるぴなす	T29
+- C11		not_found	レストラン	T29
+doc_id:00351	same_members:True	same_url:False	prac_same:F
+- C12	https://www.openstreetmap.org/way/285379160	OSM_PARTOF	道	T39
+- C12		not_found	道	T39
+doc_id:00351	same_members:True	same_url:False	prac_same:F
+- C16	https://sasp.mapion.co.jp/b/chibabank/info/5334/	Other	千葉銀行ATM 清水公園	T33
+- C16		not_found	千葉銀行	T33
+doc_id:00351	same_members:False	same_url:False	prac_same:F
+- C17-mod	https://www.openstreetmap.org/node/3654391415	OSM	春日部駅	T9
+- None		ent_nonex		
+doc_id:00351	same_members:True	same_url:False	prac_same:T
+- C18	https://www.openstreetmap.org/relation/14309204	OSM	東武アーバンパークライン	T8;T15
+- C18	https://www.openstreetmap.org/relation/14309203	OSM	東武鉄道野田線;東武野田線	T8;T15
+doc_id:00351	same_members:True	same_url:False	prac_same:F	作業者1アノテ誤りか
+- C21	https://www.openstreetmap.org/relation/14309203	OSM	東武鉄道伊勢崎線;東武伊勢崎線	T13
+- C21	https://www.openstreetmap.org/relation/9504528	OSM	東武鉄道伊勢崎線;東武スカイツリーライン	T13
+doc_id:00351	same_members:False	same_url:False	prac_same:F
+- None		ent_nonex		
+- C1	https://www.openstreetmap.org/node/7481834867	OSM	せんげん台駅	T36
+doc_id:00351	same_members:False	same_url:False	prac_same:F
+- None		ent_nonex		
+- C17	https://www.openstreetmap.org/node/7481834867	OSM	せんげん台駅	T36
+doc_id:00036	same_members:True	same_url:False	prac_same:T
+- C1	https://www.openstreetmap.org/node/6283002002	OSM	JR新宿駅	T1
+- C1	https://www.openstreetmap.org/node/2389061844	OSM	JR新宿駅	T1
+doc_id:00036	same_members:True	same_url:False	prac_same:F	作業者2は近いエントリで代替か
+- C2	https://www.openstreetmap.org/way/137189956	OSM	新宿高速バスターミナル;バスタ新宿	T41
+- C2	https://www.openstreetmap.org/node/2389061844	OSM_PARTOF	バスターミナル	T41
+doc_id:00036	same_members:True	same_url:False	prac_same:T
+- C5	https://www.openstreetmap.org/node/390127404	OSM	上里ＳＡ（下り）	T4
+- C5	https://www.openstreetmap.org/node/334528197;https://www.openstreetmap.org/node/390127404	OSM	上里サービスエリア	T4
+doc_id:00036	same_members:True	same_url:False	prac_same:F
+- C6	https://www.openstreetmap.org/node/390127404	OSM_PARTOF	プリンスフルーニ	T5
+- C6	https://www.openstreetmap.org/way/255193118	OSM_PARTOF	プリンスフルーニ	T5
+doc_id:00036	same_members:True	same_url:False	prac_same:T
+- C9	https://www.openstreetmap.org/node/3166133677	OSM	伊香保温泉停留所	T8
+- C9	https://www.openstreetmap.org/node/9224019810	OSM	伊香保温泉停留所	T8
+doc_id:00036	same_members:True	same_url:False	prac_same:F
+- C13	https://terme.jp/gunnma/miyama.htm	Other	深山温泉	T15
+- C13		not_found	深山	T15
+doc_id:00036	same_members:True	same_url:False	prac_same:F	PARTOF必要か
+- C18	https://www.openstreetmap.org/relation/12862677	OSM	日新館	T55
+- C18	https://www.openstreetmap.org/relation/12862677	OSM_PARTOF	日新館	T55
+doc_id:00036	same_members:True	same_url:False	prac_same:F	作業者2は曖昧さ回避ページ
+- C28	https://www.openstreetmap.org/way/898032027	OSM	湯川	T67
+- C28	https://ja.wikipedia.org/wiki/%E6%B9%AF%E5%B7%9D#%E6%B2%B3%E5%B7%9D%E5%90%8D	WP	湯川	T67
+doc_id:00036	same_members:True	same_url:False	prac_same:F	作業者1のページはPOIに至っていない
+- C29	https://gunma-dc.net/tourism/938/	Other	西の河原公園	T68
+- C29	https://www.kusatsu-onsen.ne.jp/category/detail/index.php?c=2&g=2&kcd=70	Other	西の河原	T68
+doc_id:00036	same_members:True	same_url:False	prac_same:F
+- C33	https://www.openstreetmap.org/node/6355716615	OSM	西の河原源泉足湯	T78
+- C33		not_found	ここ	T78
+doc_id:00036	same_members:True	same_url:False	prac_same:F
+- C36	https://www.openstreetmap.org/way/912422967	OSM	地蔵の湯	T79
+- C36		not_found	共同浴場	T79
