@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "rule-based"
+version = "0.1.0"
+description = ""
+authors = ["Shohei Higashiyama"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+logzero = "^1.7.0"
+eval-scripts = {path = "../eval_scripts"}
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
