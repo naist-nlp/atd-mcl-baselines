@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "kwja-tools"
+version = "0.1.0"
+description = ""
+authors = ["shigashiyama"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+logzero = "^1.7.0"
+kyoto-reader = "^2.5.2"
+pyknp = "^0.6.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
