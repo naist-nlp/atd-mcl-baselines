@@ -11,6 +11,11 @@ DOCIDS="00036,00265,00351,01059,01106,01563,01573,01575,01581,01591,02012,02053,
 
 cd data_preprocessor/kwja_tools
 
+mkdir -p $DOR_GOLD_TXT
+mkdir -p $DIR_PRED_KNP0
+mkdir -p $DIR_PRED_KNP
+mkdir -p $DIR_PRED_TSV
+
 for FILE_GOLD in `ls $DIR_GOLD/*.tsv`; do
     NAME=`basename $FILE_GOLD`
     DOCID=${NAME%.*}
