@@ -15,11 +15,13 @@ cd eval_scripts
 poetry run python eval_scripts/ed_evaluator_for_entries.py \
        -g $INDIR1 \
        -p $INDIR2 \
-       --use_orig_ent_id
+       --use_orig_ent_id \
+       --rename_sentence_id
 
 ## (b) grouped URL
 poetry run python eval_scripts/ed_evaluator_for_entries.py \
        -g $INDIR1 \
        -p $INDIR2 \
        -u $URLMAP \
-       --use_orig_ent_id
+       --use_orig_ent_id \
+       --rename_sentence_id

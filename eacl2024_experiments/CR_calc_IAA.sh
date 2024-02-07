@@ -7,9 +7,11 @@ cd eval_scripts
 
 poetry run python eval_scripts/coref_evaluator.py \
        -g $INDIR1 \
-       -p $INDIR2
+       -p $INDIR2 \
+       --rename_sentence_id
 
 poetry run python eval_scripts/coref_evaluator.py \
        -g $INDIR1 \
        -p $INDIR2 \
-       --name_mention_only
+       --name_mention_only \
+       --rename_sentence_id

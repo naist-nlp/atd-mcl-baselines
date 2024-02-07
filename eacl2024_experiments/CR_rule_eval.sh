@@ -12,11 +12,9 @@ cd eval_scripts
 ## Rule-CR1 (clustering condition: no merge)
 poetry run python eval_scripts/coref_evaluator.py \
        -g $FILE_GOLD -gs \
-       -p $FILE_PRED1 -ps \
-       --no_rename_sentence_id 
+       -p $FILE_PRED1 -ps
 
 ## Rule-CR2 (clustering condition: text)
 poetry run python eval_scripts/coref_evaluator.py \
        -g $FILE_GOLD -gs \
-       -p $FILE_PRED2 -ps \
-       --no_rename_sentence_id 
+       -p $FILE_PRED2 -ps

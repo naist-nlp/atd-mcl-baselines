@@ -8,5 +8,4 @@ cd eval_scripts
 poetry run python eval_scripts/ner_evaluator.py \
        -g $INDIR1 \
        -p $INDIR2 \
-       -d $DOCIDS \
-       --no_rename_sentence_id
+       -d $DOCIDS

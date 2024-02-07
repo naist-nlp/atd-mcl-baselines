@@ -542,7 +542,7 @@ if __name__ == '__main__':
         type=str,
     )
     parser.add_argument(
-        '--no_rename_sentence_id',
+        '--rename_sentence_id',
         action='store_true'
     )
     parser.add_argument(
@@ -561,27 +561,26 @@ if __name__ == '__main__':
     )
     args = parser.parse_args()
 
-    rename_sentence_id = not args.no_rename_sentence_id
     if args.gold_single_input_file:
         gold_data = load_data_from_single_file_path(
             args.gold_paths, args.target_docids,
-            rename_sentence_id=rename_sentence_id,
+            rename_sentence_id=args.rename_sentence_id,
         )
     else:
         gold_data = load_data_from_paths_per_doc(
             args.gold_paths, set({'json'}), args.target_docids,
-            rename_sentence_id=rename_sentence_id,
+            rename_sentence_id=args.rename_sentence_id,
         )
 
     if args.pred_single_input_file:
         pred_data = load_data_from_single_file_path(
             args.pred_paths, args.target_docids,
-            rename_sentence_id=rename_sentence_id,
+            rename_sentence_id=args.rename_sentence_id,
         )
     else:
         pred_data = load_data_from_paths_per_doc(
             args.pred_paths, set({'json'}), args.target_docids,
-            rename_sentence_id=rename_sentence_id,
+            rename_sentence_id=args.rename_sentence_id,
         )
 
     scores = evaluate(
