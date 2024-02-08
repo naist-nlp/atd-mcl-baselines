@@ -1,0 +1,6 @@
+
+    # Added by atd-mcl-baselines
+    if class_name in ("ElectraSudachipyTokenizer",
+                      "sudachitra.tokenization_electra_sudachipy.ElectraSudachipyTokenizer"):
+        module = importlib.import_module("sudachitra.tokenization_electra_sudachipy")
+        return getattr(module, "ElectraSudachipyTokenizer")
