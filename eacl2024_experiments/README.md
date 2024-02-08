@@ -126,8 +126,6 @@
 
 ### 3.4 spaCy-MR
 
-- Install `ja_ginza_electra`. See https://github.com/megagonlabs/ginza/blob/develop/docs/index.md
-
 - Install `ent_tools_spacy`.
 
     ~~~~
@@ -146,10 +144,10 @@
     ./eacl2024_experiments/MR_spacy_eval.sh
     ~~~~
     - If an error occurs during executing `MR_spacy_run2_train.sh`, then `MR_spacy_patch.sh` may resolve it.
-
-    ~~~~
-    ./eacl2024_experiments/MR_spacy_patch.sh
-    ~~~~
+     
+        ~~~~
+        ./eacl2024_experiments/MR_spacy_patch.sh
+        ~~~~
 
 ### 3.5 mLUKE-MR (luke-ner)
 
