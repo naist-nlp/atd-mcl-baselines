@@ -134,7 +134,9 @@
     git clone https://github.com/shigashiyama/ent_tools
     cd ent_tools/ent_tools_spacy
     poetry install
+    cd ../..
     ~~~~
+
 - Execute the experimental script.
 
     ~~~~
