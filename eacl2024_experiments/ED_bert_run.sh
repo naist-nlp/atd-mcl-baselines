@@ -2,7 +2,6 @@
 
 ## Need to set appropriate paths
 
-DB_PATH=../data/osm/20230620_all_extnames.txt
 DIR_FINAL=eacl2024_experiments/results/ED/bert
 DIR_PROGRESS=ed_bert/results
 
@@ -26,3 +25,21 @@ wget https://huggingface.co/cl-tohoku/bert-base-japanese-whole-word-masking/reso
 
 python ed_bert/convert_text_to_vectors.py \
        -i "$ENT_NAME_FILE"
+
+DB_PATH=data/osm/20230620_all_extnames.txt
+DB_JSONL_FILE=$DIR_PROGRESS/20230620_all_extnames.jsonl
+
+python ed_bert/convert_extnames_txt_to_jsonl.py \
+       -i "$DB_PATH" \
+       -o "$DB_JSONL_FILE"
+
+python ed_bert/convert_extnames_jsonl_to_names.py \
+       -i "$DB_JSONL_FILE"
+
+python ed_bert/convert_extnames_jsonl_to_ids.py \
+       -i "$DB_JSONL_FILE"
+
+DB_NAME_FILE=$DIR_PROGRESS/20230620_all_extnames.names.txt
+
+python ed_bert/convert_text_to_vectors.py \
+       -i "$DB_NAME_FILE"
