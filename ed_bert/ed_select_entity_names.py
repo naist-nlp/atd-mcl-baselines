@@ -8,9 +8,9 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument(
         '-i', '--input_path',
-        default='data/test.jsonl',
+        default='../../atd-mcl/atd-mcl/full/main/split-118/json/test-all.json',
         type=str,
-        help='path to input jsonl file'
+        help='path to input json file'
     )
     parser.add_argument(
         '-s', '--select_type',
