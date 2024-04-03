@@ -8,7 +8,7 @@ def main():
 
     parser = argparse.ArgumentParser()
     parser.add_argument(
-        '-i', '--input_file',
+        '-i', '--input_path',
         default='data/test.names.longest.txt',
         type=str,
         help='path to file that contains span names')
@@ -45,7 +45,7 @@ def main():
     if args.bert_path == "v3":
         bert_path = "model/cl-tohoku/bert-base-japanese-v3"
     else:
-        bert_path = "model/cl-tohoku/bert-base-japanese-whole-word-masking"
+        bert_path = "ed_bert/model/cl-tohoku/bert-base-japanese-whole-word-masking"
 
     tokenizer = ATDTokenizer.from_pretrained(bert_path, flush=True)
     print("Tokenizer loaded from {}".format(bert_path))
@@ -61,7 +61,7 @@ def main():
     bert_name = bert_path.split("/")[-1]
     print("BERT Model loaded from {}".format(bert_path), flush=True)
 
-    subword_output_path = args.input_file.replace(
+    subword_output_path = args.input_path.replace(
         ".txt", f".subwords.{bert_name}.jsonl"
     )
     vector_output_path = subword_output_path.replace(".jsonl", ".vecs.hdf5")
@@ -80,7 +80,7 @@ def main():
             span_indices, contexts, subword_output_path
         )
     else:
-        spans: list[str] = vectorizer.load_spans(args.input_file)
+        spans: list[str] = vectorizer.load_spans(args.input_path)
         if args.data_size:
             spans = spans[:args.data_size]
             print(f"- {len(spans)} spans will be used")

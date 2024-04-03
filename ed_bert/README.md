@@ -140,14 +140,9 @@ test.jsonl
 `20230620_all_extnames.ids.txt`が生成される
 
 ### 旅行記データの文字列をサブワード化してベクトル化
-- CPUで行う場合は、`src/vectorizers.py`の13行目をコメントアウトする
-```
-#torch.set_default_tensor_type('torch.cuda.FloatTensor')
-```
-
 - 以下のコマンドを実行
 ```
-python src/convert_text_to_vectors.py -i data/test.names.longest.txt
+python convert_text_to_vectors.py -i results/test.names.longest.txt
 
 ls data/
 20230620_all_extnames.ids.txt
