@@ -43,3 +43,13 @@ DB_NAME_FILE=$DIR_PROGRESS/20230620_all_extnames.names.txt
 
 python ed_bert/convert_text_to_vectors.py \
        -i "$DB_NAME_FILE"
+
+ENT_VEC_FILE=$DIR_PROGRESS/test-all.names.longest.subwords.bert-base-japanese-whole-word-masking.vecs.hdf5
+DB_ID_FILE=$DIR_PROGRESS/20230620_all_extnames.ids.txt
+DB_VEC_FILE=$DIR_PROGRESS/20230620_all_extnames.names.subwords.bert-base-japanese-whole-word-masking.vecs.hdf5
+RESULT=$DIR_PROGRESS/test-all.ed_results.json
+
+python ed_bert/ed_disambiguate_entities.py \
+       -i "$FILE_GOLD" -iv "$ENT_VEC_FILE" \
+       -ei "$DB_ID_FILE" -ev "$DB_VEC_FILE" \
+       -o "$RESULT"
