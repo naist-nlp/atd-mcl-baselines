@@ -1,4 +1,5 @@
-import jsonlines
+import codecs
+import json
 
 
 def main():
@@ -20,16 +21,22 @@ def main():
     )
     args = parser.parse_args()
 
-    select(args.input_path, args.select_type)
-
-
-def select(input_path: str, select_type: str):
-    output_path = input_path.replace(
-        ".jsonl", f".names.{select_type}.txt"
+    docs: dict = load_json(args.input_path)
+    output_path = args.input_path.replace(
+        ".json", f".names.{args.select_type}.txt"
     )
-    f_out = open(output_path, "w")
-    with jsonlines.open(input_path, "r") as reader:
-        for doc in reader:
+    select(docs, output_path, args.select_type)
+
+
+def load_json(filename):
+    with codecs.open(filename, mode='r', encoding='utf-8') as f:
+        dataset = json.load(f)
+    return dataset
+
+
+def select(docs: dict, output_path: str, select_type: str):
+    with open(output_path, "w") as f_out:
+        for doc in docs.values():
             men_id_to_mention: dict = doc["mentions"]
             for ent_id, entity in doc["entities"].items():
                 if select_type == "longest":
@@ -38,7 +45,6 @@ def select(input_path: str, select_type: str):
                 else:
                     entity_name = entity["normalized_name"]
                 f_out.write(f'{entity_name}\n')
-    f_out.close()
 
 
 def select_longest_mention(entity, men_id_to_mention) -> dict:
@@ -49,7 +55,7 @@ def select_longest_mention(entity, men_id_to_mention) -> dict:
     for mention_id in entity["member_mention_ids"]:
         mention = men_id_to_mention[mention_id]
         mention_text = mention["text"]
-        if "NAME" in mention["entity_label"]:
+        if "NAME" in mention["entity_type"]:
             if longest_with_name < len(mention_text):
                 longest_with_name = len(mention_text)
                 longest_mention_with_name = mention
