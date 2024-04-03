@@ -13,6 +13,12 @@ def main():
         help='path to input json file'
     )
     parser.add_argument(
+        '-o', '--output_path',
+        default=None,
+        type=str,
+        help='path to output text file'
+    )
+    parser.add_argument(
         '-s', '--select_type',
         default='longest',
         choices=['longest', 'norm'],
@@ -21,10 +27,15 @@ def main():
     )
     args = parser.parse_args()
 
+    print(f'Load {args.input_path}')
     docs: dict = load_json(args.input_path)
-    output_path = args.input_path.replace(
-        ".json", f".names.{args.select_type}.txt"
-    )
+    if args.output_path is None:
+        output_path = args.input_path.replace(
+            ".json", f".names.{args.select_type}.txt"
+        )
+    else:
+        output_path = args.output_path
+    print(f'Save {output_path}')
     select(docs, output_path, args.select_type)
 
 
