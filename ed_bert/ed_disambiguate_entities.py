@@ -108,6 +108,8 @@ def disambiguate(
     for doc_id, doc in docs.items():
         doc_result = {}
         for ent_id, entity in doc["entities"].items():
+            if entity_index >= len(input_vecs):
+                break
             if entity["has_name"]:
                 entity_name = entity["normalized_name"]
                 entry_group_ids: list[str] = retrieve_top_entries(
