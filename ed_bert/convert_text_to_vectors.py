@@ -29,7 +29,7 @@ def main():
         help='data size')
     parser.add_argument(
         '-bert', '--bert_path',
-        default='whole-word-masking',
+        default='model/cl-tohoku/bert-base-japanese-whole-word-masking',
         type=str,
         help='bert model to be used')
     parser.add_argument(
@@ -41,11 +41,7 @@ def main():
         action='store_true'
     )
     args = parser.parse_args()
-
-    if args.bert_path == "v3":
-        bert_path = "model/cl-tohoku/bert-base-japanese-v3"
-    else:
-        bert_path = "ed_bert/model/cl-tohoku/bert-base-japanese-whole-word-masking"
+    bert_path = args.bert_path
 
     tokenizer = ATDTokenizer.from_pretrained(bert_path, flush=True)
     print("Tokenizer loaded from {}".format(bert_path))
