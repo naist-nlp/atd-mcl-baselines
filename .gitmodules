@@ -1,0 +1,3 @@
+[submodule "mr_mluke/luke-ner"]
+	path = mr_mluke/luke-ner
+	url = https://github.com/naist-nlp/luke-ner
