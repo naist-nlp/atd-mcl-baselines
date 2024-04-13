@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "mluke-tools"
+version = "0.1.0"
+description = ""
+authors = ["Hiroki Teranishi <hiroki.teranishi@riken.jp>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+sudachipy = "^0.6.7"
+sudachidict-full = "^20230110"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
