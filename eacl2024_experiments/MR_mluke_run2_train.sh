@@ -24,7 +24,7 @@ poetry run torchrun --nproc_per_node 4 luke-ner/src/main.py \
        --max_entity_length 64 \
        --max_mention_length 16 \
        --pretokenize \
-       --num_train_epochs 20 \
+       --num_train_epochs 10 \
        --learning_rate 1e-5 \
        --save_strategy epoch \
        --load_best_model_at_end \

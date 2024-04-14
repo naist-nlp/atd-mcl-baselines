@@ -58,29 +58,5 @@ def read_atd(
             yield doc_id, examples
 
 
-def _doc_to_examples(
-    doc_id: str, doc: Dict[str, Any], tokenizer=None
-) -> Iterator[Dict[str, Any]]:
-    mentions = {
-        k: {"start": v["span"][0], "end": v["span"][1], "label": v["entity_type"]}
-        for k, v in doc["mentions"].items()
-    }
-
-    for sentence_id, sentence in sorted(doc["sentences"].items()):
-        text = sentence["text"]
-
-        word_positions = None
-        if tokenizer:
-            word_positions = [(m.begin(), m.end()) for m in tokenizer.tokenize(text)]
-
-        example = {
-            "id": f"{doc_id}:{sentence_id}",
-            "text": text,
-            "entities": [mentions[mid] for mid in sentence["mention_ids"]],
-            "word_positions": word_positions,
-        }
-        yield example
-
-
 if __name__ == "__main__":
     main()
