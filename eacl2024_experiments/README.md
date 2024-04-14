@@ -151,12 +151,21 @@
 
 ### 3.5 mLUKE-MR (luke-ner)
 
-- Install `luke-ner`. See https://github.com/naist-nlp/luke-ner
+- Install `luke-ner` (https://github.com/naist-nlp/luke-ner).
+
+    ~~~~
+    git submodule update --init --recursive
+    cd mr_mluke
+    poetry install
+    cd ..
+    ~~~~
 
 - Execute the experimental script.
 
     ~~~~
-    #TODO ./eacl2024_experiments/MR_mluke_run.sh
+    ./eacl2024_experiments/MR_mluke_run1_preproc.sh
+    ./eacl2024_experiments/MR_mluke_run2_train.sh
+    ./eacl2024_experiments/MR_mluke_run3_postproc.sh
     ./eacl2024_experiments/MR_mluke_eval.sh
     ~~~~
 
