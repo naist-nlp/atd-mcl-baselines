@@ -25,26 +25,30 @@ def read_atd(
 ) -> Iterator[Tuple[str, List[Dict[str, Any]]]]:
     with open(file, mode="r", encoding="utf-8") as f:
         for doc_id, doc in json.load(f).items():
-            mentions = {
-                k: {
-                    "start": v["span"][0],
-                    "end": v["span"][1],
-                    "label": v["entity_type"],
-                    "entity_id": v["entity_id"],
-                }
-                for k, v in doc["mentions"].items()
-            }
-
             examples: List[Dict[str, Any]] = []
             for sentence_id, sentence in sorted(doc["sentences"].items()):
+                mentions = []
+                for mid in sentence["mention_ids"]:
+                    mention = doc["mentions"][mid]
+                    if (
+                        mention["entity_id"] is None
+                        or mention.get("generic", False)
+                        or mention.get("ref_spec_amb", False)
+                    ):
+                        continue
+                    mentions.append(
+                        {
+                            "start": mention["span"][0],
+                            "end": mention["span"][1],
+                            "label": mention["entity_type"],
+                            "entity_id": mention["entity_id"],
+                        }
+                    )
                 example = {
                     "id": f"{doc_id}:{sentence_id}",
                     "text": sentence["text"],
-                    "mentions": [mentions[mid] for mid in sentence["mention_ids"]],
+                    "mentions": mentions,
                 }
-                example["mentions"] = [
-                    m for m in example["mentions"] if m["entity_id"] is not None
-                ]
                 examples.append(example)
 
             yield doc_id, examples
