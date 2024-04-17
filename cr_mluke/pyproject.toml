@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "cr-mluke"
+version = "0.1.0"
+description = ""
+authors = ["Hiroki Teranishi <hiroki.teranishi@riken.jp>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+torch = "==2.*"
+transformers = {version = "==4.*", extras = ["torch"]}
+datasets = "==2.*"
+sentencepiece = "^0.2.0"
+protobuf = "==3.*"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
