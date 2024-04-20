@@ -24,5 +24,6 @@ poetry run torchrun --nproc_per_node 4 luke-coref/src/main.py \
        --num_train_epochs 20 \
        --learning_rate 5e-5 \
        --save_strategy epoch \
+       --save_total_limit 3 \
        --load_best_model_at_end \
        --metric_for_best_model eval_accuracy
