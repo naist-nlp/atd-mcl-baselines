@@ -169,12 +169,23 @@
     ./eacl2024_experiments/MR_mluke_eval.sh
     ~~~~
 
-### 3.6 mLUKE-CR
+### 3.6 mLUKE-CR (luke-coref)
+
+- Install `luke-coref` (https://github.com/naist-nlp/luke-coref).
+
+    ~~~~
+    git submodule update --init --recursive
+    cd mr_mluke
+    poetry install
+    cd ..
+    ~~~~
 
 - Execute the experimental script.
 
     ~~~~
-    #TODO ./eacl2024_experiments/CR_mluke_run.sh
+    ./eacl2024_experiments/CR_mluke_run1_preproc.sh
+    ./eacl2024_experiments/CR_mluke_run2_train.sh
+    ./eacl2024_experiments/CR_mluke_run3_postproc.sh
     ./eacl2024_experiments/CR_mluke_eval.sh
     ~~~~
 

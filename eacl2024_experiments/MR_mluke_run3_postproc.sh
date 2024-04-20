@@ -3,7 +3,6 @@
 ## Need to set appropriate paths
 
 MODEL_DIR=../../eacl2024_experiments/results/MR/mluke/model_atd-mcl_split-118
-DIR_GOLD=../../atd-mcl/atd-mcl/full/main/split-118/json
 DIR_PRED=../../eacl2024_experiments/results/MR/mluke/pred
 
 cd data_preprocessor/mluke_tools

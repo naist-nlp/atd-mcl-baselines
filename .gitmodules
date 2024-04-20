@@ -1,3 +1,6 @@
 [submodule "mr_mluke/luke-ner"]
 	path = mr_mluke/luke-ner
 	url = https://github.com/naist-nlp/luke-ner
+[submodule "cr_mluke/luke-coref"]
+	path = cr_mluke/luke-coref
+	url = https://github.com/naist-nlp/luke-coref

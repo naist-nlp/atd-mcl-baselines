@@ -23,4 +23,4 @@
 - ginza_tools
     - See `README.md` and `MR_ginza_run.sh` under `atd-mcl-baselines/eacl2024_experiments`.
 - mluke_tools
-    - See `README.md` and `MR_mluke_run*.sh` under `atd-mcl-baselines/eacl2024_experiments`.
+    - See `README.md`, `MR_mluke_run*.sh`, and `CR_mluke_run*.sh` under `atd-mcl-baselines/eacl2024_experiments`.
