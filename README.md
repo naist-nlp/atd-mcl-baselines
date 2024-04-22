@@ -6,13 +6,11 @@ For reproducing the experimental results, see `eacl2024_experiments/README.md`.
 
 ## License
 
-TBA
+The data and code are released under the MIT License.
 
-## Contact
+## Citation
 
-TBA
-
-## Paper Information
+Please cite the following paper.
 
 ~~~~
 @inproceedings{higashiyama-etal-2024-arukikata,
@@ -21,5 +19,9 @@ TBA
     booktitle = "Findings of the Association for Computational Linguistics: EACL 2024",
     month = mar,
     year = "2024",
+    address = "St. Julian{'}s, Malta",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2024.findings-eacl.35",
+    pages = "513--532",
 }
 ~~~~
