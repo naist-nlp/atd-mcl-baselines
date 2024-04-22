@@ -86,8 +86,8 @@ class CountForNER:
 
     def update(
             self,
-            gold_spans,
-            pred_spans
+            gold_spans: list,
+            pred_spans: list,
     ) -> None:
 
         if self.label_map is not None:
