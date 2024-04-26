@@ -194,6 +194,6 @@
 - Execute the experimental script.
 
     ~~~~
-    #TODO ./eacl2024_experiments/ED_bert_run.sh
+    ./eacl2024_experiments/ED_bert_run.sh
     ./eacl2024_experiments/ED_bert_eval.sh
     ~~~~
