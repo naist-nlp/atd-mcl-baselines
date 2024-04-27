@@ -75,7 +75,7 @@ def get_nom_to_name_relations(ents, mens):
     return nom_men2name_men_set
 
 
-def get_clusters_for_eval(ents, mens, exclude_singletons=False, name_mention_only=False):
+def get_clusters_for_eval(ents, mens, exclude_singletons=False, ignore_labels=None):
     clusters = []
 
     for ent_id, ent in ents.items():
@@ -87,7 +87,9 @@ def get_clusters_for_eval(ents, mens, exclude_singletons=False, name_mention_onl
         for men_id in mem_mens:
             men_dict = mens[men_id]
             elab     = men_dict[ENT_TYPE]
-            if name_mention_only and not elab.endswith('NAME'):
+            if (ignore_labels
+                and elab in ignore_labels
+            ):
                 continue
 
             sen_id   = men_dict[SEN_ID]
@@ -380,7 +382,7 @@ def evaluate(
         gold_data: dict,
         pred_data: dict,
         exclude_singletons: bool = False,
-        name_mention_only: bool = False,
+        ignore_labels: set[str] = None,
         constrain_by_gold_mentions: str = None,
 ) -> dict:
 
@@ -422,27 +424,20 @@ def evaluate(
 
         # clusters: list of clusters (cluster: list of mentions)
         p_clusters = get_clusters_for_eval(
-            pred_ents, pred_mens, exclude_singletons, name_mention_only)
+            pred_ents, pred_mens, exclude_singletons, ignore_labels)
         g_clusters = get_clusters_for_eval(
-            gold_ents, gold_mens, exclude_singletons, name_mention_only)
+            gold_ents, gold_mens, exclude_singletons, ignore_labels)
         count.update_cluster_exact_match(g_clusters, p_clusters)
 
-        if name_mention_only:
-            n_gold_cls += len(g_clusters)
-            n_pred_cls += len(p_clusters)
-            n_gold_sin += sum([1 for cls in g_clusters if len(cls) == 1])
-            n_pred_sin += sum([1 for cls in p_clusters if len(cls) == 1])
+        n_gold_cls += len(g_clusters)
+        n_pred_cls += len(p_clusters)
+        n_gold_sin += sum([1 for cls in g_clusters if len(cls) == 1])
+        n_pred_sin += sum([1 for cls in p_clusters if len(cls) == 1])
 
-        else:
-            n_gold_cls += len(g_clusters)
-            n_pred_cls += len(p_clusters)
-            n_gold_sin += sum([1 for cls in g_clusters if len(cls) == 1])
-            n_pred_sin += sum([1 for cls in p_clusters if len(cls) == 1])
-
-            # pair from NOM mention to NAME mention
-            g_nom_men2name_men_set = get_nom_to_name_relations(gold_ents, gold_mens)
-            p_nom_men2name_men_set = get_nom_to_name_relations(pred_ents, pred_mens)
-            count.update_nom_to_name_relation(g_nom_men2name_men_set, p_nom_men2name_men_set)
+        # pair from NOM mention to NAME mention
+        g_nom_men2name_men_set = get_nom_to_name_relations(gold_ents, gold_mens)
+        p_nom_men2name_men_set = get_nom_to_name_relations(pred_ents, pred_mens)
+        count.update_nom_to_name_relation(g_nom_men2name_men_set, p_nom_men2name_men_set)
 
         p_mention_g_cluster = get_mention_assignments(p_clusters, g_clusters)  
         g_mention_p_cluster = get_mention_assignments(g_clusters, p_clusters)
@@ -551,8 +546,9 @@ if __name__ == '__main__':
         choices=('exact_match', 'overlap')
     )
     parser.add_argument(
-        '--name_mention_only',
-        action='store_true'
+        '--ignore_labels',
+        type=str,
+        default=None,
     )
     parser.add_argument(
         '--output_score_path', '-o',
@@ -560,6 +556,11 @@ if __name__ == '__main__':
         default=None,
     )
     args = parser.parse_args()
+
+    ignore_labels = None
+    if args.ignore_labels:
+        ignore_labels = set(args.ignore_labels.split(','))
+        logger.info(f'Set ignore_labels as {ignore_labels}.')
 
     if args.gold_single_input_file:
         gold_data = load_data_from_single_file_path(
@@ -586,14 +587,14 @@ if __name__ == '__main__':
     scores = evaluate(
         gold_data, pred_data,
         exclude_singletons=False,
-        name_mention_only=args.name_mention_only, 
+        ignore_labels=ignore_labels,
         constrain_by_gold_mentions=args.constrain_by_gold_mentions,
     )
 
     scores_multi = evaluate(
         gold_data, pred_data,
         exclude_singletons=True,
-        name_mention_only=args.name_mention_only, 
+        ignore_labels=ignore_labels,
         constrain_by_gold_mentions=args.constrain_by_gold_mentions,
     )
     del scores_multi['stats']
