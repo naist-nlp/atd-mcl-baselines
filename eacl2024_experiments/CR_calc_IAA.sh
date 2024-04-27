@@ -13,5 +13,6 @@ poetry run python eval_scripts/coref_evaluator.py \
 poetry run python eval_scripts/coref_evaluator.py \
        -g $INDIR1 \
        -p $INDIR2 \
-       --name_mention_only \
-       --rename_sentence_id
+       --rename_sentence_id \
+       --ignore_labels LOC_NOM,FAC_NOM,LINE_NOM,TRANS_NOM,LOC_ORG,FAC_ORG,LOC_OR_FAC,DEICTIC
+
