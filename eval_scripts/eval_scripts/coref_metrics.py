@@ -1,10 +1,13 @@
 """
 This code is a slightly modified verson of the following codes:
-https://github.com/ns-moosavi/coval/blob/master/coval/eval/eval.py
+https://github.com/ns-moosavi/coval/blob/master/coval/eval/evaluator.py
 https://github.com/ns-moosavi/coval/blob/master/coval/conll/reader.py#L454
+
+Copyright (c) 2018 Nafise Sadat Moosavi
+Released under the MIT License
+https://github.com/ns-moosavi/coval/blob/master/LICENSE
 """
 from collections import Counter
-
 import numpy as np
 from scipy.optimize import linear_sum_assignment
 
